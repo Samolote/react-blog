@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-const BlogPostForm: React.FC = () => {
+const NewBlogPostForm: React.FC = () => {
 	const [title, setTitle] = useState<string>('');
 	const [content, setContent] = useState<string>('');
 	const history = useHistory();
@@ -53,4 +53,4 @@ const BlogPostForm: React.FC = () => {
 	);
 };
 
-export default BlogPostForm;
+export default NewBlogPostForm;

@@ -6,7 +6,7 @@ import MainWrapper from '../shared/MainWrapper';
 import Header from './Header/index';
 import BlogGrid from './BlogGrid';
 import BlogPost from './BlogPost';
-import BlogPostForm from './BlogPostForm';
+import NewBlogPostForm from './NewBlogPostForm';
 
 const App: React.FC = () => {
 	return (
@@ -18,8 +18,8 @@ const App: React.FC = () => {
 						<Route exact path="/">
 							<BlogGrid />
 						</Route>
-						<Route path="/edit">
-							<BlogPostForm />
+						<Route path="/new">
+							<NewBlogPostForm />
 						</Route>
 						<Route path="/blog-post/:id">
 							<BlogPost />

@@ -14,7 +14,7 @@ const Header: React.FC = () => {
 					Articles
 				</Logo>
 			</Heading>
-			<Button as={Link} to="/edit">
+			<Button as={Link} to="/new">
 				Add article
 			</Button>
 		</StyledHeader>
