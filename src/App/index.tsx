@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 import TopContainer from '../shared/TopContainer';
 import MainWrapper from '../shared/MainWrapper';
@@ -29,7 +29,8 @@ const App: React.FC = () => {
 							<BlogPost />
 						</Route>
 						<Route path="*">
-							<p>no such address duuuude - 404</p>
+							<p>404</p>
+							<Link to="/">Go back to homepage</Link>
 						</Route>
 					</Switch>
 				</MainWrapper>

@@ -9,8 +9,6 @@ interface Comment {
 	id: number;
 	blogPostId: number;
 	content: string;
-	likes: number;
-	dislikes: number;
 }
 
 type Comments = Comment[];
