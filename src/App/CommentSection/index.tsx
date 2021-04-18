@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import CommentForm from '../CommentForm';
 
 interface Props {
 	id: string;
@@ -25,10 +26,10 @@ const CommentSection: React.FC<Props> = ({ id }) => {
 
 	return (
 		<>
+			<CommentForm id={id} />
 			{comments && (
 				<section>
-					<h2>Comments:</h2>
-					<p>Curent comment count: {comments.length}</p>
+					<h2>Comments: {comments.length}</h2>
 					{comments.map(({ id, content }) => (
 						<p key={id}>{content}</p>
 					))}
