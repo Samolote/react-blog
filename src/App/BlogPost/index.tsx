@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
+import CommentSection from '../CommentSection';
 
 interface BlogPostData {
 	id: number;
@@ -31,18 +32,21 @@ const BlogPost: React.FC = () => {
 	};
 
 	return (
-		<article>
+		<>
 			{blogPostData && (
 				<>
-					<h2>{blogPostData.title}</h2>
-					<p>{blogPostData.content}</p>
-					<div className="button-wrapper">
-						<button onClick={handleEditClick}>Edit</button>
-						<button onClick={handleDeleteClick}>Delete</button>
-					</div>
+					<article>
+						<h2>{blogPostData.title}</h2>
+						<p>{blogPostData.content}</p>
+						<div className="button-wrapper">
+							<button onClick={handleEditClick}>Edit</button>
+							<button onClick={handleDeleteClick}>Delete</button>
+						</div>
+					</article>
+					<CommentSection id={id} />
 				</>
 			)}
-		</article>
+		</>
 	);
 };
 
