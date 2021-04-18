@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { Link, useParams, useHistory } from 'react-router-dom';
 import CommentSection from '../CommentSection';
 
 interface BlogPostData {
 	id: number;
 	title: string;
 	content: string;
-	likes?: number;
-	dislikes?: number;
 }
 
 const BlogPost: React.FC = () => {
@@ -20,10 +18,6 @@ const BlogPost: React.FC = () => {
 			.then((res) => res.json())
 			.then((data) => setBlogPostData(data));
 	}, [id]);
-
-	const handleEditClick = (e: React.MouseEvent) => {
-		alert(e.currentTarget.textContent);
-	};
 
 	const handleDeleteClick = (e: React.MouseEvent) => {
 		fetch(`http://localhost:3001/blog-posts/${id}`, { method: 'DELETE' }).then(() =>
@@ -39,7 +33,7 @@ const BlogPost: React.FC = () => {
 						<h2>{blogPostData.title}</h2>
 						<p>{blogPostData.content}</p>
 						<div className="button-wrapper">
-							<button onClick={handleEditClick}>Edit</button>
+							<Link to={`/edit/${id}`}>Edit</Link>
 							<button onClick={handleDeleteClick}>Delete</button>
 						</div>
 					</article>
