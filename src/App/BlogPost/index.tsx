@@ -8,6 +8,12 @@ interface BlogPostData {
 	content: string;
 }
 
+interface Comment {
+	id: number;
+	blogPostId: number;
+	content: string;
+}
+
 const BlogPost: React.FC = () => {
 	const { id } = useParams<{ id: string }>();
 	const [blogPostData, setBlogPostData] = useState<BlogPostData>();
@@ -19,10 +25,15 @@ const BlogPost: React.FC = () => {
 			.then((data) => setBlogPostData(data));
 	}, [id]);
 
-	const handleDeleteClick = (e: React.MouseEvent) => {
-		fetch(`http://localhost:3001/blog-posts/${id}`, { method: 'DELETE' }).then(() =>
-			history.push('/')
+	const handleDeleteClick = async (e: React.MouseEvent) => {
+		const resComments = await fetch(`http://localhost:3001/comments?blogPostId=${id}`);
+		const filteredComments = await resComments.json();
+		await filteredComments.forEach(
+			async (comment: Comment) =>
+				await fetch(`http://localhost:3001/comments/${comment.id}`, { method: 'DELETE' })
 		);
+		await fetch(`http://localhost:3001/blog-posts/${id}`, { method: 'DELETE' });
+		history.push('/');
 	};
 
 	return (
