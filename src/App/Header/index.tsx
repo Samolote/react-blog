@@ -14,7 +14,7 @@ const Header: React.FC = () => {
 					Articles
 				</Logo>
 			</Heading>
-			<Button as={Link} to="/create-blog-post">
+			<Button as={Link} to="/edit">
 				Add article
 			</Button>
 		</StyledHeader>

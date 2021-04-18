@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-const CreateNewBlogPostForm: React.FC = () => {
+const BlogPostForm: React.FC = () => {
 	const [title, setTitle] = useState<string>('');
 	const [content, setContent] = useState<string>('');
 	const history = useHistory();
@@ -24,7 +24,7 @@ const CreateNewBlogPostForm: React.FC = () => {
 
 	return (
 		<div>
-			<h2>Create a new article!</h2>
+			<h2>Your article below:</h2>
 			<form onSubmit={handleSubmit}>
 				<div className="field">
 					<label htmlFor="article-title">Article title:</label>
@@ -53,4 +53,4 @@ const CreateNewBlogPostForm: React.FC = () => {
 	);
 };
 
-export default CreateNewBlogPostForm;
+export default BlogPostForm;
