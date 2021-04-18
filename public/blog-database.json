@@ -1,0 +1,19 @@
+{
+	"blog-posts": [
+		{
+			"id": 1,
+			"title": "First post on this blog!",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur aliquam est, vitae mollis urna molestie eget. Nullam condimentum dui eget vestibulum cursus. Suspendisse varius luctus ex, sed dignissim leo posuere condimentum. Duis sollicitudin commodo consequat. Morbi iaculis, leo vitae commodo commodo, nibh massa posuere enim, euismod lacinia ex sem pharetra augue. Nunc sem turpis, faucibus ut magna a, vehicula semper ex. Praesent scelerisque a ligula vel commodo.",
+			"likes": 8,
+			"dislikes": 3
+		}
+	],
+	"comments": [
+		{
+			"blog-post-id": 1,
+			"content": "very nice!",
+			"likes": 4,
+			"dislikes": 2
+		}
+	]
+}
