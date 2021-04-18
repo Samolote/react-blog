@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams, useHistory } from 'react-router-dom';
+
+import StyledArticle from './StyledArticle';
+import ArticleHeading from './ArticleHeading';
+import ArticleContent from './ArticleContent';
+import ButtonWrapper from './ButtonWrapper';
+import Button from './Button';
 import CommentSection from '../CommentSection';
 
 interface BlogPostData {
@@ -40,14 +46,16 @@ const BlogPost: React.FC = () => {
 		<>
 			{blogPostData && (
 				<>
-					<article>
-						<h2>{blogPostData.title}</h2>
-						<p>{blogPostData.content}</p>
-						<div className="button-wrapper">
-							<Link to={`/edit/${id}`}>Edit</Link>
-							<button onClick={handleDeleteClick}>Delete</button>
-						</div>
-					</article>
+					<StyledArticle>
+						<ArticleHeading>{blogPostData.title}</ArticleHeading>
+						<ArticleContent>{blogPostData.content}</ArticleContent>
+						<ButtonWrapper>
+							<Button as={Link} to={`/edit/${id}`}>
+								Edit
+							</Button>
+							<Button onClick={handleDeleteClick}>Delete</Button>
+						</ButtonWrapper>
+					</StyledArticle>
 					<CommentSection id={id} />
 				</>
 			)}
