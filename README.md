@@ -1,6 +1,13 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and made as recruitment task.\
+Below startup is the rest of automatically generated README by CRA.
+
+## Startup
+
+To run app use `npm start`\
+Paste following line into command prompt to run json-server\
+`npx json-server --watch .\public\blog-database.json --port 3001`
 
 ## Available Scripts
 
